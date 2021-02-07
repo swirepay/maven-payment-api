@@ -199,13 +199,7 @@
   <profiles>
     <!-- GPG Signature on release -->
     <profile>
-      <id>release-sign-artifacts</id>
-      <activation>
-        <property>
-          <name>performRelease</name>
-          <value>true</value>
-        </property>
-      </activation>
+      <id>deploy</id>
       <build>
         <plugins>
           <plugin>
@@ -217,6 +211,7 @@
                 <id>sign-artifacts</id>
                 <phase>verify</phase>
                 <goals>
+                  <goal>deploy</goal>
                   <goal>sign</goal>
                 </goals>
                 <configuration>
